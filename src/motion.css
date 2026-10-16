@@ -1,0 +1,85 @@
+/* Edit this file. The base layout and Vue behavior are already provided. */
+/* 01 TODO: input transition and focus ring. */
+.auth-form input {
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.auth-form input:focus {
+  border-color: #1f7a5a;
+  box-shadow: 0 0 0 4px rgba(31, 122, 90, 0.18);
+  outline: none;
+}
+
+/* 02 TODO: button transition, hover lift, and active press. */
+.primary {
+  transition: transform 180ms ease;
+}
+
+.primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.primary:active:not(:disabled) {
+  transform: translateY(0) scale(.98);
+}
+
+/* 03 TODO: @keyframes shake and .is-error. */
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+
+  25%, 75% {
+    transform: translateX(-6px);
+  }
+
+  50% {
+    transform: translateX(6px);
+  }
+}
+
+.is-error {
+  animation: shake 380ms ease;
+}
+
+/* 04 TODO: @keyframes spin and .spinner. */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  animation: spin 800ms linear infinite;
+}
+
+/* 05 TODO: .panel-enter-active, .panel-leave-active,
+   .panel-enter-from, and .panel-leave-to. */
+.panel-enter-active,
+.panel-leave-active {
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.panel-enter-from {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.panel-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+
+
+/* 06 TODO: prefers-reduced-motion overrides. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
